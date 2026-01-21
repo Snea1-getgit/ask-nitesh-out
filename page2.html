@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weekend?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #e0f2ff, #fce4ec);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      width: 320px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+h2 {
+  margin-bottom: 40px;
+}
+button {
+  margin: 10px 15px;
+}
+
+
+    button {
+      padding: 12px 26px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 0 15px;
+      background-color: #ff7aa2;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #ff5c8a;
+    }
+#noBtn {
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.buttons {
+  position: relative;
+  margin-top: 30px;
+  height: 200px; /* play area for runaway button */
+  width: 100%;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    
+    <h2>Catch up this weekend?</h2>
+
+<div class="buttons">
+  <button id="yesBtn" onclick="location.href='page3.html'">Chalo</button>
+  <button id="noBtn">Chusi cheptha Sneha</button>
+</div>
+
+  </div>
+<script>
+  const noBtn = document.getElementById("noBtn");
+  const buttonsArea = document.querySelector(".buttons");
+
+  noBtn.addEventListener("mouseenter", () => {
+    const areaWidth = buttonsArea.offsetWidth - noBtn.offsetWidth;
+    const areaHeight = buttonsArea.offsetHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * areaWidth;
+    const y = Math.random() * areaHeight;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+</script>
+
+</body>
+</html>
